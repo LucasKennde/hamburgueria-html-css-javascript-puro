@@ -74,8 +74,11 @@ const burgurs = [
 
 ]
 
-const cardapio = document.querySelector('.cardapio');
+const carrinho = []
 
+
+const cardapio = document.querySelector('.cardapio');
+const contentCarrinho = document.querySelector('.content-carrinho')
 burgurs.forEach((lista)=>{
     cardapio.innerHTML += `<div class="content-burguer">
                 <img src=${lista.image} alt="" srcset="">
@@ -84,6 +87,7 @@ burgurs.forEach((lista)=>{
                     <p class="content-burguer-description">${lista.descricao}</p>
                     <span>
                         <strong class="content-burguer-price">R$ ${lista.preco.toFixed(2)}</strong>
+                        
                         <button class="content-burguer-button" onClick = "mostrarDetalhes(${lista.id})">Saiba mais</button>
                     </span>
                 </div>
@@ -95,15 +99,44 @@ function mostrarDetalhes(infor){
     detalhes.classList.toggle('display-none');
     let containerModal = document.querySelector('.container-modal')
     const burguer = burgurs.find(busca => busca.id === infor);
-
+    
+    if (!burguer) {
+        return;
+    }
     containerModal.innerHTML = `<div class="modal-content" onClick="mostrarDetalhes()">
                 <img src="${burguer.image}" alt="" srcset="">
                 <div class="modal-burguer">
                     <h1>${burguer.nome}</h1>
                     <p>${burguer.descricao}</p>
-                    <button >Adicionar ao Carrinho</button>
+                    <textarea placeholder="Observação..."></textarea>
+                    <button class="adicionar">Adicionar ao Carrinho</button>
                 </div>
                 <span class="close-modal" onClick="mostrarDetalhes()">x</span>
             </div>`
+                          
+            document.querySelector('.adicionar').addEventListener('click', () => {
 
+                carrinho.push(burguer);
+                
+                let novoPedido = ''
+                let somaValor = 0
+                carrinho.map((pedido)=>{
+                   novoPedido += `
+                    <li>${pedido.nome}: <span> R$ ${pedido.preco.toFixed(2)}</span></li>
+                    `
+                    somaValor+=pedido.preco
+                    contentCarrinho.innerHTML = novoPedido               
+                 })
+                 document.querySelector('.valor').innerHTML = `
+                <span>Quantidade: <strong> ${carrinho.length}</strong></span> 
+                <span>Total:  <strong> R$ ${somaValor.toFixed(2)}</strong></span>`
+                
+            });
 }
+
+
+
+
+
+
+

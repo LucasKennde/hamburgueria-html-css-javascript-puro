@@ -9,7 +9,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 15px;
+    
 }
 header{
     height: 350px;
@@ -23,11 +24,14 @@ header{
     width: 100%;
     display: flex;
     max-width: 1200px;
+    
 }
 .container.header{
     justify-content: center;
+    align-items: center;
     img{
         width: 200px;
+        
     }
 }
 .wrapper.menu{
@@ -59,6 +63,7 @@ header{
     border:2px solid #719a45;
     padding: 10px;
     border-radius: 10px;
+    margin-bottom: 3rem;
     
 }
 .content-burguer{
@@ -146,6 +151,11 @@ header{
             gap: 1rem;
             padding: 1rem;
 
+            textarea{
+                width: 100%;
+                height: 100px;
+                padding: 10px;
+            }
             button{
                 padding: 1rem;
                 border-radius: 0.3rem;
@@ -186,3 +196,52 @@ header{
 .display-none{
     display: none;
 }
+
+.main{
+    display: flex;
+    gap: 1rem;
+    max-width: 1440px;
+}
+.container-carrinho{
+    width: 400px;
+    border:2px solid #4b7a3a;
+    border-radius: 0.7rem;
+    padding: 1rem;
+    height: auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    h3{
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        gap: 0.5rem;
+    }
+    li{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        opacity: 0.6;
+    }
+}
+.valor{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 20px;
+    
+    span{
+        
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
