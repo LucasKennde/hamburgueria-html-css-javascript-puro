@@ -138,9 +138,14 @@ function atualizarCarrinho() {
     contentCarrinho.innerHTML = novoPedido;
     document.querySelector('.valor').innerHTML = `
         <span>Quantidade: <strong> ${carrinho.length}</strong></span> 
-        <span>Total:  <strong> R$ ${somaValor.toFixed(2)}</strong></span>`;
+        <span>Total:  <strong> R$ ${somaValor.toFixed(2)}</strong></span>
+        <button class="finalizar" onClick="finalizarPedido()">Finalizar Pedido </button>`;
 }
-
+function finalizarPedido(){
+    alert('Pedido Finalizado com sucesso!')
+    carrinho.length = 0;
+    atualizarCarrinho();
+}
 function excluirBurguer(infor) {
     const indexToDelete = carrinho.findIndex(busca => busca.id === infor);
 
