@@ -1,5 +1,3 @@
-
-
 const burgurs = [
     {
         id: 1,
@@ -71,15 +69,14 @@ const burgurs = [
         image: "./src/assets/burguers/10.png",
         descricao:"Lorem ipsum dolor sit amet consectetur adipisicing elit. A necessitatibus odit, cum numquam ullam sapiente ipsam in"
     }
+];
 
-]
-
-const carrinho = []
-
+const carrinho = [];
 
 const cardapio = document.querySelector('.cardapio');
-const contentCarrinho = document.querySelector('.content-carrinho')
-burgurs.forEach((lista)=>{
+const contentCarrinho = document.querySelector('.content-carrinho');
+
+burgurs.forEach((lista) => {
     cardapio.innerHTML += `<div class="content-burguer">
                 <img src=${lista.image} alt="" srcset="">
                 <div class="content-burguer-info">
@@ -88,18 +85,19 @@ burgurs.forEach((lista)=>{
                     <span>
                         <strong class="content-burguer-price">R$ ${lista.preco.toFixed(2)}</strong>
                         
-                        <button class="content-burguer-button" onClick = "mostrarDetalhes(${lista.id})">Saiba mais</button>
+                        <button class="content-burguer-button" onClick="mostrarDetalhes(${lista.id})">Saiba mais</button>
                     </span>
                 </div>
-            </div>`
-})
+            </div>`;
+});
 
-function mostrarDetalhes(infor){
+
+function mostrarDetalhes(infor) {
     const detalhes = document.querySelector('.modal');
     detalhes.classList.toggle('display-none');
-    let containerModal = document.querySelector('.container-modal')
+    let containerModal = document.querySelector('.container-modal');
     const burguer = burgurs.find(busca => busca.id === infor);
-    
+
     if (!burguer) {
         return;
     }
@@ -112,31 +110,42 @@ function mostrarDetalhes(infor){
                     <button class="adicionar">Adicionar ao Carrinho</button>
                 </div>
                 <span class="close-modal" onClick="mostrarDetalhes()">x</span>
-            </div>`
-                          
-            document.querySelector('.adicionar').addEventListener('click', () => {
+            </div>`;
 
-                carrinho.push(burguer);
-                
-                let novoPedido = ''
-                let somaValor = 0
-                carrinho.map((pedido)=>{
-                   novoPedido += `
-                    <li>${pedido.nome}: <span> R$ ${pedido.preco.toFixed(2)}</span></li>
-                    `
-                    somaValor+=pedido.preco
-                    contentCarrinho.innerHTML = novoPedido               
-                 })
-                 document.querySelector('.valor').innerHTML = `
-                <span>Quantidade: <strong> ${carrinho.length}</strong></span> 
-                <span>Total:  <strong> R$ ${somaValor.toFixed(2)}</strong></span>`
-                
+            document.querySelector('.adicionar').addEventListener('click', () => {
+                adicionarBurguer(burguer)
             });
 }
 
+function adicionarBurguer(burguer){
+    
+        carrinho.push(burguer);
+        atualizarCarrinho();
+    
+}
 
+function atualizarCarrinho() {
+    let novoPedido = '';
+    let somaValor = 0;
+    carrinho.forEach((pedido) => {
+        novoPedido += `
+            <li>${pedido.nome}: <span> R$ ${pedido.preco.toFixed(2)}
+            <span class="excluir" onClick="excluirBurguer(${pedido.id})">X</span></span> 
+            </li>
+        `;
+        somaValor += pedido.preco;
+    });
+    contentCarrinho.innerHTML = novoPedido;
+    document.querySelector('.valor').innerHTML = `
+        <span>Quantidade: <strong> ${carrinho.length}</strong></span> 
+        <span>Total:  <strong> R$ ${somaValor.toFixed(2)}</strong></span>`;
+}
 
+function excluirBurguer(infor) {
+    const indexToDelete = carrinho.findIndex(busca => busca.id === infor);
 
-
-
-
+    if (indexToDelete !== -1) {
+        carrinho.splice(indexToDelete, 1);
+        atualizarCarrinho();
+    }
+}

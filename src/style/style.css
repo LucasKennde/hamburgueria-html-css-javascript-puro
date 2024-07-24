@@ -245,3 +245,9 @@ header{
     }
 }
 
+.excluir{
+    cursor: pointer;
+    color: red;
+    opacity: 1;
+    font-weight: 900;
+}
