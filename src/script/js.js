@@ -4,6 +4,7 @@ const burgurs = [
         nome: "Bisg smash",
         preco: 27.80,
         image: "./src/assets/burguers/1.png",
+        categoria:"refrigerante",
         descricao:"Lorem ipsum dolor sit amet consectetur adipisicing elit. A necessitatibus odit, cum numquam ullam sapiente ipsam in, quod dolorum, isquam. Officiis, voluptatum!"
     },
     {
@@ -11,6 +12,7 @@ const burgurs = [
         nome: "Megazord",
         preco: 19.90,
         image: "./src/assets/burguers/2.png",
+        categoria:"combo",
         descricao:"Lorem ipsum dolor sit ametin, quod dolorum, recusandae non. Impedit quidem perspiciatis autem maxime cumque quisquam. Officiis, voluptatum!"
     },
     {
@@ -18,6 +20,7 @@ const burgurs = [
         nome: "Baby yoda",
         preco: 25.40,
         image: "./src/assets/burguers/3.png",
+        categoria:"combo",
         descricao:"Lorem ipsum dolor sit amet consectetur adipisicing elit. A necessitatibus odit, cum numquam ullam sapiente ipsam involuptatum!"
     },
     {
@@ -25,6 +28,7 @@ const burgurs = [
         nome: "Burguer Bacon shower",
         preco: 27.50,
         image: "./src/assets/burguers/4.png",
+        categoria:"combo",
         descricao:"Lorem ipsum dolor sit tatum!"
     },
     {
@@ -32,6 +36,7 @@ const burgurs = [
         nome: "Sarapateu",
         preco: 18.50,
         image: "./src/assets/burguers/5.png",
+        categoria:"refrigerante",
         descricao:"Lorem ipsum , recusandae non. Impedit quidem perspiciatis autem maxime cumque quisquam. Officiis, voluptatum!"
     },
     {
@@ -39,6 +44,7 @@ const burgurs = [
         nome: "Shake do arabe",
         preco: 17.50,
         image: "./src/assets/burguers/6.png",
+        categoria:"refrigerante",
         descricao:"Lorem ipsum dolor sit . A necessitatibus odit, cum numquam ullam sapiente ipsam in, quod dolorum, recusandae non. Impedit quidem perspiciatis autem maxime cumque quisquam. Officiis, voluptatum!"
     },
     {
@@ -70,27 +76,58 @@ const burgurs = [
         descricao:"Lorem ipsum dolor sit amet consectetur adipisicing elit. A necessitatibus odit, cum numquam ullam sapiente ipsam in"
     }
 ];
-
+let pedido = JSON.parse(localStorage.getItem('pedido')) || [];
 const carrinho = [];
 
 const cardapio = document.querySelector('.cardapio');
 const contentCarrinho = document.querySelector('.content-carrinho');
 
-burgurs.forEach((lista) => {
-    cardapio.innerHTML += `<div class="content-burguer">
-                <img src=${lista.image} alt="" srcset="">
-                <div class="content-burguer-info">
-                    <h3 class="content-burguer-title">${lista.nome}</h3>
-                    <p class="content-burguer-description">${lista.descricao}</p>
-                    <span>
-                        <strong class="content-burguer-price">R$ ${lista.preco.toFixed(2)}</strong>
-                        
-                        <button class="content-burguer-button" onClick="mostrarDetalhes(${lista.id})">Saiba mais</button>
-                    </span>
-                </div>
-            </div>`;
-});
 
+
+
+
+    
+    displayConsulta()
+function displayConsulta(value){
+    cardapio.innerHTML= ''
+
+
+    burgurs.forEach((lista) => {
+
+        if(!value){
+            cardapio.innerHTML += `<div class="content-burguer">
+            <img src=${lista.image} alt="" srcset="">
+            <div class="content-burguer-info">
+                <h3 class="content-burguer-title">${lista.nome}</h3>
+                <p class="content-burguer-description">${lista.descricao}</p>
+                <span>
+                    <strong class="content-burguer-price">R$ ${lista.preco.toFixed(2)}</strong>
+                    
+                    <button class="content-burguer-button" onClick="mostrarDetalhes(${lista.id})">Saiba mais</button>
+                </span>
+            </div>
+        </div>`;
+        }else if(lista.categoria === value){
+
+        
+
+        cardapio.innerHTML += `<div class="content-burguer">
+                    <img src=${lista.image} alt="" srcset="">
+                    <div class="content-burguer-info">
+                        <h3 class="content-burguer-title">${lista.nome}</h3>
+                        <p class="content-burguer-description">${lista.descricao}</p>
+                        <span>
+                            <strong class="content-burguer-price">R$ ${lista.preco.toFixed(2)}</strong>
+                            
+                            <button class="content-burguer-button" onClick="mostrarDetalhes(${lista.id})">Saiba mais</button>
+                        </span>
+                    </div>
+                </div>`;
+
+            }
+    });
+
+}
 
 function mostrarDetalhes(infor) {
     const detalhes = document.querySelector('.modal');
@@ -142,8 +179,14 @@ function atualizarCarrinho() {
         <button class="finalizar" onClick="finalizarPedido()">Finalizar Pedido </button>`;
 }
 function finalizarPedido(){
-    alert('Pedido Finalizado com sucesso!')
+    // alert('Pedido Finalizado com sucesso!')
+    pedido.push(carrinho)
+    
+    localStorage.setItem('pedido', JSON.stringify(pedido))
     carrinho.length = 0;
+    // pedido.length = 0
+    // location.reload()
+    pedido = JSON.parse(localStorage.getItem('pedido'))
     atualizarCarrinho();
 }
 function excluirBurguer(infor) {

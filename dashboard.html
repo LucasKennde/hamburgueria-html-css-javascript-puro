@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/style/style.css">
+    <link rel="stylesheet" href="./src/style/dashboard.css">
+</head>
+<body>
+    <div class="wrapper">
+        
+        <main>
+            <section class="display-login" >
+                <div class="forms">
+                <button onclick="displayLogar()">Login</button>
+                <button onclick="displayCadastrar()">Cadastro</button>
+                </div>
+                
+                <form id="login">
+                    <h1>Login</h1>
+                    <input type="text" name="" id="usuario" placeholder="Usuario">
+                    <input type="password" name="" id="senha" placeholder="senha">
+                    <button onclick="login()" type="button">Entrar</button>
+                    
+                </form>
+                
+                <form id="cadastro">
+                    <h1>Cadastre-se</h1>
+                    <input type="text" name="" id="cadUser" placeholder="Digite o seu nome">
+                    <input type="text" name="" id="cadEmail" placeholder="Digite o seu Email">
+                    <input type="password" name="" id="cadSenha" placeholder="Senha">
+                    <input type="password" name="" id="cadConfirmarSenha" placeholder="Confirme a senha">
+                    <button onclick="cadastrar()" type="button">Cadastrar</button>
+                    
+                </form>
+                
+            </section>
+            <section class="display-system" style="display: none;">
+                    
+                    <section class="content-system">
+                        <nav class="nav-bar">
+                            <span>
+                                <h1>Dahsboard</h1>
+                                <ul>
+                                    <li>Usuarios</li>
+                                    <li>Burguers</li>
+                                    <li>Categorias</li>
+                                    <li>Cozinha</li>
+                                    <li>Mesa</li>
+                                    
+                                </ul>
+                            </span>
+                            <span>Configuração</span>
+                        </nav>
+                        <div class="content-dashboard">
+
+                            <h1>teste</h1>
+                        </div>
+                    </section>
+            </section>
+        </main>
+        
+    </div>
+    <script src="./src/script/dashboard.js"></script>
+
+</body>
+</html>

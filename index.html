@@ -15,9 +15,9 @@
     <section class="wrapper menu">
         <div class="container menu">
             <ul class="menu-lista">
-                <li class="menu-item">Combos</li>
-                <li class="menu-item">Burguer</li>
-                <li class="menu-item">Bebidas</li>
+                <li class="menu-item" onclick="displayConsulta()">Combos</li>
+                <li class="menu-item" onclick="displayConsulta('combo')">Burguer</li>
+                <li class="menu-item" onclick="displayConsulta('refrigerante')">Bebidas</li>
                 <li class="menu-item">Entradas</li>
                 <li class="menu-item">Promoções</li>
             </ul>
@@ -48,6 +48,7 @@
             
         </div>
     </section>
+    <p id="portal"><a href="dashboard.html">Acessar Portal</a></p>
     <script src="./src/script/js.js"></script>
 </body>
 </html>
