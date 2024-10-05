@@ -1,0 +1,25 @@
+.wrapper.menu {
+    background-color: #ced2d8;
+}
+
+.menu-lista {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: #719a45;
+
+    li {
+        padding: 1rem 2rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #719a45;
+            color: #f9f9f9;
+            transition: 0.3s;
+        }
+    }
+}

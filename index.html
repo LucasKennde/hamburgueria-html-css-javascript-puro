@@ -1,54 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamburgueria do Lucas</title>
-    <link rel="stylesheet" href="./src/style/style.css">
-</head>
-<body>
-    <header class="wrapper">
-        <div class="container header">
-           <img src="./src/assets/logo.png" alt="" srcset="">
-        </div>
-    </header>
-    <section class="wrapper menu">
-        <div class="container menu">
-            <ul class="menu-lista">
-                <li class="menu-item" onclick="displayConsulta()">Combos</li>
-                <li class="menu-item" onclick="displayConsulta('combo')">Burguer</li>
-                <li class="menu-item" onclick="displayConsulta('refrigerante')">Bebidas</li>
-                <li class="menu-item">Entradas</li>
-                <li class="menu-item">Promoções</li>
-            </ul>
-        </div>
-    </section>
-    <section class="wrapper">
-    <div class="main">
-        <div class="container cardapio">
-        </div>
-        <div class="container-carrinho">
-            <span>
-
-                <h3>Carrinho</h3>
-                <ul class="content-carrinho">
-                    
-                </ul>
-            </span>
-            <div class="valor">
-
-            
-            </div>
-        </div>
-    </div>
-    </section>
-    <section class="modal display-none" onClick="mostrarDetalhes()">
-        <div class="container-modal" >
-            
-            
-        </div>
-    </section>
-    <p id="portal"><a href="dashboard.html">Acessar Portal</a></p>
-    <script src="./src/script/js.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

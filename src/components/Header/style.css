@@ -1,0 +1,19 @@
+header {
+    height: 350px;
+    background-image: url('../../assets/images/background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+.container.header {
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 200px;
+
+    }
+}

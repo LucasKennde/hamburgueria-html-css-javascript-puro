@@ -1,0 +1,55 @@
+.grid-burguers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.card-burguer {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+
+    cursor: pointer;
+
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: start;
+}
+
+.card-burguer:hover {
+    
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-burguer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.card-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 1rem;
+}
+.card-burguer h2 {
+    font-size: 1.5rem;
+}
+
+.card-burguer p {
+    font-size: 1rem;
+}
+
+.card-burguer p:nth-child(4) {
+    font-weight: bold;
+    color: #ff6347; /* Cor do preço */
+}
