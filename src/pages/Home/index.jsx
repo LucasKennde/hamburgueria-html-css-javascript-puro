@@ -1,6 +1,7 @@
 import "./style.css"
 import { burguers } from "../../utils/burguers"
 import { useEffect } from "react"
+import { CardBurger } from "../../components/CardBurguer"
 export const Home = () => {
 
     useEffect(() => {
@@ -15,15 +16,8 @@ export const Home = () => {
 
                     <div className="grid-burguers">
                         {burguers.map((burguer, index) => (
-                            <div key={index} className="card-burguer">
+                            <CardBurger key={index} burguer={burguer} />
 
-                                <img src={burguer.image} alt="" />
-                                <div className="card-description">
-                                    <h2>{burguer.name}</h2>
-                                    <p>{burguer.descricao}</p>
-                                    <h2>Price: ${burguer.price}</h2>
-                                </div>
-                            </div>
                         ))}
                     </div>
                 </div>
