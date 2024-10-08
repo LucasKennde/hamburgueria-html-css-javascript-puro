@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
 .wrapper {
   width: 100%;
   display: flex;
@@ -11,9 +12,10 @@
   gap: 15px;
 
 }
+
 .container {
   width: 100%;
   display: flex;
   max-width: 1200px;
-
+  padding: 0rem 1rem;
 }

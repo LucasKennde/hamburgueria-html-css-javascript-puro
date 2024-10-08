@@ -4,7 +4,7 @@ export const burguers = [
         name: "Bisg smash",
         price: 27.80,
         image: "/burguers/1.png",
-        description:"refrigerante",
+        tipo:"refrigerante",
         descricao:"Lorem ipsum dolor sit amet consectetur adipisicing elit. A necessitatibus odit, cum numquam ullam sapiente ipsam in, quod dolorum, isquam. Officiis, voluptatum!"
     },
     {
@@ -12,7 +12,7 @@ export const burguers = [
         name: "Megazord",
         price: 19.90,
         image: "/burguers/2.png",
-        description:"combo",
+        tipo:"combo",
         descricao:"Lorem ipsum dolor sit ametin, quod dolorum, recusandae non. Impedit quidem perspiciatis autem maxime cumque quisquam. Officiis, voluptatum!"
     },
     {
@@ -20,7 +20,7 @@ export const burguers = [
         name: "Baby yoda",
         price: 25.40,
         image: "/burguers/3.png",
-        description:"combo",
+        tipo:"combo",
         descricao:"Lorem ipsum dolor sit amet consectetur adipisicing elit. A necessitatibus odit, cum numquam ullam sapiente ipsam involuptatum!"
     },
     {
@@ -28,7 +28,7 @@ export const burguers = [
         name: "Burguer Bacon shower",
         price: 27.50,
         image: "/burguers/4.png",
-        description:"combo",
+        tipo:"combo",
         descricao:"Lorem ipsum dolor sit tatum!"
     },
     {
@@ -36,7 +36,7 @@ export const burguers = [
         name: "Sarapateu",
         price: 18.50,
         image: "/burguers/5.png",
-        description:"refrigerante",
+        tipo:"refrigerante",
         descricao:"Lorem ipsum , recusandae non. Impedit quidem perspiciatis autem maxime cumque quisquam. Officiis, voluptatum!"
     },
     {
@@ -44,7 +44,7 @@ export const burguers = [
         name: "Shake do arabe",
         price: 17.50,
         image: "/burguers/6.png",
-        description:"refrigerante",
+        tipo:"refrigerante",
         descricao:"Lorem ipsum dolor sit . A necessitatibus odit, cum numquam ullam sapiente ipsam in, quod dolorum, recusandae non. Impedit quidem perspiciatis autem maxime cumque quisquam. Officiis, voluptatum!"
     },
     {

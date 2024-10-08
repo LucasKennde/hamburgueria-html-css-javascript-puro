@@ -1,28 +1,24 @@
-import "./style.css"
-import { burguers } from "../../utils/burguers"
-import { useEffect } from "react"
-import { CardBurger } from "../../components/CardBurguer"
+// src/pages/Home.js
+
+import "./style.css";
+import { useContext, useState } from "react";
+import { CardBurger } from "../../components/CardBurguer";
+import { CartContext } from "../../context/CartContext";
+
 export const Home = () => {
-
-    useEffect(() => {
-        console.log(burguers)
-    }, [])
-
-
+    const { addToCart,burguersList, setBurguersList } = useContext(CartContext);
+    
     return (
-        <>
-            <section className="wrapper">
-                <div className="container">
-
-                    <div className="grid-burguers">
-                        {burguers.map((burguer, index) => (
-                            <CardBurger key={index} burguer={burguer} />
-
-                        ))}
-                    </div>
+        <section className="wrapper">
+            <div className="container">
+                <div className="grid-burguers">
+                    {burguersList.map((burguer, index) => (
+                        <CardBurger key={index} addCart={addToCart} burguer={burguer} />
+                    ))}
                 </div>
-            </section>
 
-        </>
-    )
-}
+            </div>
+           
+        </section>
+    );
+};
